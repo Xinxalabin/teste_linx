@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.2 on linux)" generated="2024-02-06T17:33:07.188939" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Linx" source="/home/dan/Documentos/RobotFramework/teste_linx/test_linx.robot">
+<test id="s1-t1" name="Acessar e verificar filiais e segmentos" line="11">
+<kw name="Abrir navegador e acessar o site da Linx">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:07.323498" level="INFO">Opening browser 'chrome' to base url 'https://www.linx.com.br'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-06T17:33:07.322975" elapsed="9.368474"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-02-06T17:33:16.691962" elapsed="0.195237"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:07.321949" elapsed="9.565411"/>
+</kw>
+<kw name="Verificar filial CASCAVEL/PR">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:16.889153" level="INFO">Clicking element 'xpath://a[contains(text(),'Institucional')]'.</msg>
+<arg>xpath://a[contains(text(),'Institucional')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:16.888540" elapsed="0.315052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:17.204394" level="INFO">Clicking element 'xpath://a[contains(text(),'Matriz e filiais')]'.</msg>
+<arg>xpath://a[contains(text(),'Matriz e filiais')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:17.203936" elapsed="2.121518"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//h3[@class='o-title c-address-list__title' and contains(text(),'Cascavel/PR')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.325985" elapsed="0.071201"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:19.397759" level="INFO">Filial CASCAVEL/PR encontrada</msg>
+<arg>Filial CASCAVEL/PR encontrada</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.397461" elapsed="0.000370"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:19.398655" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.398040" elapsed="0.013611"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:19.644016" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.412290" elapsed="0.231837"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.412087" elapsed="0.232190"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:16.888169" elapsed="2.756312"/>
+</kw>
+<kw name="Verificar ausência de filial APARECIDA DE GOIANIA">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:19.676685" level="INFO">Element 'xpath://div[contains(text(),'APARECIDA DE GOIANIA')]' did not exist.</msg>
+<arg>xpath://div[contains(text(),'APARECIDA DE GOIANIA')]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.645413" elapsed="0.031569"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath://div[contains(text(),'APARECIDA DE GOIANIA')]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.645288" elapsed="0.031800"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:19.677864" level="INFO">Filial APARECIDA DE GOIANIA não encontrada</msg>
+<arg>Filial APARECIDA DE GOIANIA não encontrada</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.677315" elapsed="0.000732"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:19.644974" elapsed="0.033210"/>
+</kw>
+<kw name="Voltar à página inicial">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//img[@alt='Linx']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.679006" elapsed="0.017804"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:19.697555" level="INFO">Clicking element 'xpath=//img[@alt='Linx']'.</msg>
+<arg>xpath=//img[@alt='Linx']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:19.697237" elapsed="1.327761"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:21.025517" level="INFO">Elemento img com atributo alt "Linx" clicado com sucesso</msg>
+<arg>Elemento img com atributo alt "Linx" clicado com sucesso</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:21.025279" elapsed="0.000446"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:21.296620" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-02-06T17:33:21.026590" elapsed="0.270309"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-02-06T17:33:21.026113" elapsed="0.270889"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:19.678486" elapsed="1.618600"/>
+</kw>
+<kw name="Acessar carreiras da Linx">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:21.298389" level="INFO">Clicking element 'xpath://a[contains(text(),'Institucional')]'.</msg>
+<arg>xpath://a[contains(text(),'Institucional')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:21.298032" elapsed="0.167911"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:21.466363" level="INFO">Clicking element 'xpath://a[contains(text(),'Carreira Linx')]'.</msg>
+<arg>xpath://a[contains(text(),'Carreira Linx')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:21.466144" elapsed="1.557639"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:23.383279" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.024464" elapsed="0.358940"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.024168" elapsed="0.359316"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:21.297440" elapsed="2.086112"/>
+</kw>
+<kw name="Filtrar segmento Linx - Tecnologia e produto">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:23.384943" level="INFO">Clicking element 'id=greenouse-segments'.</msg>
+<arg>id=greenouse-segments</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.384515" elapsed="0.152836"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:23.537967" level="INFO">Selecting options from selection list 'xpath=//select[@id='greenouse-segments']' by value Linx - Tecnologia e Produto.</msg>
+<arg>xpath=//select[@id='greenouse-segments']</arg>
+<arg>Linx - Tecnologia e Produto</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.537563" elapsed="0.265404"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:23.803502" level="INFO">Opção 'Linx - Tecnologia e Produto' selecionada com sucesso</msg>
+<arg>Opção 'Linx - Tecnologia e Produto' selecionada com sucesso</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.803309" elapsed="0.000263"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:23.949160" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-2.png"&gt;&lt;img src="selenium-element-screenshot-2.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>xpath=//select[@id='greenouse-segments']</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.804193" elapsed="0.145066"/>
+</kw>
+<arg>Capture Element Screenshot</arg>
+<arg>xpath=//select[@id='greenouse-segments']</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.803976" elapsed="0.145359"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:23.384228" elapsed="0.565169"/>
+</kw>
+<kw name="Verificar ausência do segmento Linx - Suporte">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:23.985779" level="INFO">Element 'xpath://label[contains(text(),'Linx - Suporte')]' did not exist.</msg>
+<arg>xpath://label[contains(text(),'Linx - Suporte')]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.950898" elapsed="0.035059"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath://label[contains(text(),'Linx - Suporte')]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.950449" elapsed="0.035627"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:23.986458" level="INFO">Segmento Linx - Suporte não encontrado</msg>
+<arg>Segmento Linx - Suporte não encontrado</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.986280" elapsed="0.000228"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:23.949882" elapsed="0.036822"/>
+</kw>
+<kw name="Verificar segmento filtrado">
+<kw name="Get Selected List Value" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:24.178713" level="INFO">${selected_option} = Linx - Tecnologia e Produto</msg>
+<var>${selected_option}</var>
+<arg>id=greenouse-segments</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2024-02-06T17:33:23.988137" elapsed="0.190635"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:24.203007" level="INFO">Element 'id=greenouse-segments' attribute 'value' contains value 'Linx - Tecnologia e Produto'.</msg>
+<arg>id=greenouse-segments</arg>
+<arg>value</arg>
+<arg>Linx - Tecnologia e Produto</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2024-02-06T17:33:24.178946" elapsed="0.024190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-06T17:33:24.203449" level="INFO">Opção 'Linx - Tecnologia e Produto' selecionada com sucesso</msg>
+<arg>Opção 'Linx - Tecnologia e Produto' selecionada com sucesso</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-06T17:33:24.203319" elapsed="0.000165"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-02-06T17:33:24.395886" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-02-06T17:33:24.203895" elapsed="0.192098"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-02-06T17:33:24.203690" elapsed="0.192376"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:23.987697" elapsed="0.408431"/>
+</kw>
+<status status="PASS" start="2024-02-06T17:33:07.321418" elapsed="17.074881"/>
+</test>
+<status status="PASS" start="2024-02-06T17:33:07.189971" elapsed="17.206870"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Linx">Test Linx</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
